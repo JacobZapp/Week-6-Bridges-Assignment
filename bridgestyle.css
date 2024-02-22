@@ -1,3 +1,5 @@
 #bridge-map {
-
+    height: 300px;
+    width: 480px;
+    border: 1px green solid;
 }

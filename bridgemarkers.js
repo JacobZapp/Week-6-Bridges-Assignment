@@ -1,7 +1,7 @@
 // Coordinates for the map center
-let mapCenter = [44, -93]
+let mapCenter = [44, -103]
 // how much to zoom in or out
-let zoomLevel = 2
+let zoomLevel = 5
 
 //L is a leaflet object, not native to Script
 // Create mpa, center it, and set the zoom level
