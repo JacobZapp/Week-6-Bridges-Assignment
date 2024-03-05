@@ -10,16 +10,9 @@ let bridgeMap = L.map("bridge-map").setView(mapCenter, zoomLevel)
 
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-}).addTo(bridgeMap); //adding tilelayer to the bridge map
+}).addTo(bridgeMap); //adding tilelayer to the bridge map //
 
-
-//Example of setting markers
-let stPaulCoordinates = [,]
-let stpMarker = L.marker(stPaulCoordinates)
-    .bindPopup("Saint Paul College<br>")
-    .addTo(bridgeMap)
-
-
+// Array containing all information needed for bridge markers
 bridgeData = [
     {
         name:'Verrazano-Narrows Bridge',
@@ -53,10 +46,13 @@ bridgeData = [
     },
 ]
 
+// This is the marker that is at each bridge site.
 bridgeData.forEach(function(bridge) {
     let markerText = `${bridgeData.name}<br>${bridgeData.span}`
-    L.marker(bridgeData.coordinates)
+    let bridgeMarker = L.marker(bridge.coordinates)
         .bindPopup(markerText)
         .addTo(bridgeMap)
     // todo create popup from data in the bridge object
 })
+
+
